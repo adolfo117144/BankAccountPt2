@@ -7,7 +7,7 @@ class Checking(BankAccount):
         super().__init__(customer_name, current_balance, minimum_balance, account_number, routing_number)
         self.transfer_limit = transfer_limit
 
-    def transferLimit(self, amount, recipient):
+    def transfer(self, amount, recipient):
         if amount > self.transfer_limit:
             print(f"Transfer failed! Amount exceeds limit of ${self.transfer_limit:.2f}")
         elif self.current_balance - amount < self.minimum_balance:
